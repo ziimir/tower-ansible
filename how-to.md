@@ -60,16 +60,6 @@ network:
 
 `sudo chmod -R g+rw  /mnt/tank/`
 
-### add acl for shared
-
-`sudo apt install acl`
-
-`sudo zfs set acltype=posixacl TANK`
-
-`sudo setfacl -Rdm g:sambausers:rwx /mnt/tank/`
-
-`sudo setfacl -Rm g:sambausers:rwx /mnt/tank/`
-
 ### configure zfs
 
 create or import zfs file system
@@ -81,6 +71,16 @@ create or import zfs file system
 `sudo zpool import -a -f` - import all pools to pool configured mnt
 
 `sudo zfs set sharesmb=on TANK` - [turn on smb for zfs](https://www.youtube.com/watch?v=G8btpRDLiTY)
+
+### add acl for shared
+
+`sudo apt install acl`
+
+`sudo zfs set acltype=posixacl TANK`
+
+`sudo setfacl -Rdm g:sambausers:rwx /mnt/tank/`
+
+`sudo setfacl -Rm g:sambausers:rwx /mnt/tank/`
 
 ### configure docker containers tachidesk, deluge
 

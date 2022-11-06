@@ -60,6 +60,16 @@ network:
 
 `sudo chmod -R g+rw  /mnt/tank/`
 
+### add acl for shared
+
+`sudo apt install acl`
+
+`sudo zfs set acltype=posixacl TANK`
+
+`sudo setfacl -Rdm g:sambausers:rwx /mnt/tank/`
+
+`sudo setfacl -Rm g:sambausers:rwx /mnt/tank/`
+
 ### configure zfs
 
 create or import zfs file system

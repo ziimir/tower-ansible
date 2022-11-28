@@ -1,1 +1,1 @@
-# TODO: сделать из этого всего ансибл скрипт
+# TODO: make ansible script from this

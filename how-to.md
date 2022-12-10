@@ -133,6 +133,18 @@ services:
       - "/mnt/tank/manga/tachidesk:/home/suwayomi/.local/share/Tachidesk"
     ports:
       - "4567:4567"
+  media:
+    image: "lscr.io/linuxserver/jellyfin:latest"
+    container_name: jellyfin
+    environment:
+      - PUID=1001 # familyman
+      - PGID=1001 # sambausers
+      - TZ=Europe/Moscow
+    volumes:
+      - "/mnt/tank/configs/jellyfin:/config"
+      - "/mnt/tank/anime:/data/anime"
+    ports:
+      - "8096:8096"
 ```
 
 `sudo systemctl daemon-reload`

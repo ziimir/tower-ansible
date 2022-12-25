@@ -145,6 +145,15 @@ services:
       - "/mnt/tank/anime:/data/anime"
     ports:
       - "8096:8096"
+  monitoring:
+    image: "nicolargo/glances:latest-full"
+    container_name: glances
+    environment:
+      - GLANCES_OPT="-w"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    ports: "61208-61209:61208-61209"
+    pid: host
 ```
 
 `sudo systemctl daemon-reload`

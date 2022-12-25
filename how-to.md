@@ -152,6 +152,7 @@ services:
       - GLANCES_OPT="-w"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/mnt/tank/configs/glances/glances.conf:/etc/glances.conf"
     ports: "61208-61209:61208-61209"
     pid: host
 ```

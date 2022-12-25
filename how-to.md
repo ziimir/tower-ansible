@@ -149,7 +149,7 @@ services:
     image: "nicolargo/glances:latest-full"
     container_name: glances
     environment:
-      - GLANCES_OPT="-w"
+      - GLANCES_OPT=-w
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "/mnt/tank/configs/glances/glances.conf:/etc/glances.conf"
